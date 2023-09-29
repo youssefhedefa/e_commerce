@@ -36,13 +36,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       });
     });
   }
-
   @override
   Widget build(BuildContext context) {
-    //int currentPage = 0;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 28.0),
+        padding: const EdgeInsets.symmetric(horizontal: 38.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
@@ -75,7 +74,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   child: buildButton(_currentPage),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
