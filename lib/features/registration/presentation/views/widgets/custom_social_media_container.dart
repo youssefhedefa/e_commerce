@@ -9,12 +9,13 @@ class CustomSocialMediaContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 141,
+      //width: 141,
       height: 40,
-      color:const Color.fromRGBO(242, 245, 249, 1),
+      color: Colors.black,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
               backgroundColor: Colors.transparent,
@@ -23,8 +24,8 @@ class CustomSocialMediaContainer extends StatelessWidget {
             Text(
               label,
               style:const TextStyle(
-                color: Color(0xFF475569),
-                fontSize: 14,
+                color: Colors.white,
+                fontSize: 16,
                 fontWeight: FontWeight.w400,
                 height: 1.43,
               ),

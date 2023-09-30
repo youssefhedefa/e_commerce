@@ -1,11 +1,14 @@
-import 'package:e_commerce/features/logIn/presentation/views/log_in_view.dart';
 import 'package:e_commerce/features/onBoarding/presentation/views/on_boarding_view.dart';
+import 'package:e_commerce/features/registration/presentation/views/log_in_view.dart';
+import 'package:e_commerce/features/registration/presentation/views/sign_in_view.dart';
 import 'package:flutter/material.dart';
 
 class MyRoutes
 {
   static const onBoardingView = '/OnBoarding';
   static const logInView = '/logIn';
+  static const signUpView = '/signUp';
+
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch(settings.name)
@@ -18,6 +21,9 @@ class MyRoutes
 
       case logInView:
         return MaterialPageRoute(builder: (context) => const LogInView(),);
+
+      case signUpView:
+        return MaterialPageRoute(builder: (context) => const SignUpView(),);
 
     }
 
