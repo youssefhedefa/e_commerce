@@ -1,9 +1,10 @@
 import 'package:e_commerce/core/utils/my_assets.dart';
+import 'package:e_commerce/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import 'widgets/custom_advance_button.dart';
 import 'widgets/custom_image_viewr.dart';
+
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
 
@@ -36,6 +37,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +48,23 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, MyRoutes.logInView);
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             CustomImageViewer(pageController: pageController, children: images),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -63,13 +82,17 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 const Spacer(),
                 TextButton(
                   onPressed: () {
-                    setState(() {
-                      _currentPage = pageController.page!.round();
-                    });
-                    pageController.nextPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.fastOutSlowIn,
-                    );
+                    if (_currentPage == 2) {
+                      Navigator.pushNamed(context, MyRoutes.logInView);
+                    } else {
+                      setState(() {
+                        _currentPage = pageController.page!.round();
+                      });
+                      pageController.nextPage(
+                        duration: const Duration(seconds: 1),
+                        curve: Curves.fastOutSlowIn,
+                      );
+                    }
                   },
                   child: buildButton(_currentPage),
                 ),
@@ -80,13 +103,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       ),
     );
   }
-  Widget buildButton(int currentPage){
-    if(currentPage == 2)
-    {
-      return const CustomAdvanceButton(text: 'Advance');
 
-    }
-    else {
+  Widget buildButton(int currentPage) {
+    if (currentPage == 2) {
+      return const CustomAdvanceButton(text: 'Advance');
+    } else {
       return const CustomAdvanceButton(text: 'Next');
     }
   }
