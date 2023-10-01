@@ -69,7 +69,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 TextButton(
                   onPressed: () {
                     if (_currentPage == 2) {
-                      Navigator.pushNamed(context, MyRoutes.logInView);
+                      Navigator.pushReplacementNamed(context, MyRoutes.logInView);
                     } else {
                       setState(() {
                         _currentPage = pageController.page!.round();

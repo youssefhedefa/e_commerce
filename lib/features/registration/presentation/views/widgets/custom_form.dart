@@ -1,6 +1,8 @@
 import 'package:e_commerce/core/utils/const.dart';
+import 'package:e_commerce/core/utils/firebase_services.dart';
+import 'package:e_commerce/features/registration/date/repos/logInRepo/log_in_repo_impli.dart';
+import 'package:e_commerce/features/registration/date/repos/signInRepo/sign_up_repo_impli.dart';
 import 'package:flutter/material.dart';
-
 import 'custom_text_form_field.dart';
 
 class CustomForm extends StatefulWidget {
@@ -27,6 +29,9 @@ class _CustomFormState extends State<CustomForm> {
   String? email;
   String? password;
   bool visibility = false;
+  final SignInRepoImpli signInRepoImpli = SignInRepoImpli();
+  final LogInRepoImpli logInImpli = LogInRepoImpli();
+  final FireBaseServices _services = FireBaseServices();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -72,31 +77,45 @@ class _CustomFormState extends State<CustomForm> {
             decoration: const BoxDecoration(
               color: Colors.black,
             ),
-            child: MaterialButton(
-              onPressed: (){
-                if(formKey.currentState!.validate())
-                {
-                  if(widget.viewName == Constants.logInView)
-                  {
-                    print(email! + password!);
-                  }
-                  else if(widget.viewName == Constants.signInView){
-                    print('sign in');
-                  }
-                }
-                else {
-                  return;
-                }
-              },
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  widget.buttonText,
-                  style:const TextStyle(
-                    color: Colors.white,
+            child: Builder(
+              builder: (context) {
+                return MaterialButton(
+                  onPressed: () async {
+                    if(formKey.currentState!.validate())
+                    {
+                      if(widget.viewName == Constants.logInView)
+                      {
+                        //print(email! + password!);
+                        final response = await logInImpli.logIn(email!, password!);
+                        String message = response.toString();
+                        if(context.mounted){
+                          _services.checkResponseState(context, message, response);
+                        }
+
+                      }
+                      else if(widget.viewName == Constants.signInView){
+                        final response = await  signInRepoImpli.signIn(email!, password!);
+                        String message = response.toString();
+                        if(context.mounted){
+                          _services.checkResponseState(context, message, response);
+                        }
+                      }
+                    }
+                    else {
+                      return;
+                    }
+                  },
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      widget.buttonText,
+                      style:const TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                );
+              }
             ),
           ),
         ],

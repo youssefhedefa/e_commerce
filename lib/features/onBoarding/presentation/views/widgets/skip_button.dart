@@ -6,7 +6,7 @@ class SkipButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return            Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
@@ -17,7 +17,7 @@ class SkipButton extends StatelessWidget {
           ),
           child: TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, MyRoutes.logInView);
+              Navigator.pushReplacementNamed(context, MyRoutes.logInView);
             },
             child: const Text(
               'Skip',
