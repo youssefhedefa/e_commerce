@@ -3,30 +3,43 @@ import 'package:e_commerce/features/registration/presentation/views/log_in_view.
 import 'package:e_commerce/features/registration/presentation/views/sign_in_view.dart';
 import 'package:flutter/material.dart';
 
-class MyRoutes
-{
+import 'custom_page_route.dart';
+
+class MyRoutes {
   static const onBoardingView = '/OnBoarding';
   static const logInView = '/logIn';
   static const signUpView = '/signUp';
-
+  //static const signUpView2 = '/signUp2';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    switch(settings.name)
-    {
+    switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (context) => const OnBoardingView(),);
+        return MaterialPageRoute(
+          builder: (context) => const OnBoardingView(),
+        );
 
       case onBoardingView:
-        return MaterialPageRoute(builder: (context) => const OnBoardingView(),);
+        return CustomPageRoute(
+          child: const OnBoardingView(),
+          axisDirection: AxisDirection.left,
+        );
 
       case logInView:
-        return MaterialPageRoute(builder: (context) => const LogInView(),);
+        return CustomPageRoute(
+          child: const  LogInView(),
+          axisDirection: AxisDirection.left,
+        );
 
       case signUpView:
-        return MaterialPageRoute(builder: (context) => const SignUpView(),);
+        return CustomPageRoute(
+          child: const SignUpView(),
+          axisDirection: AxisDirection.left,
+        );
 
+      // case signUpView2:
+      //   var arg = settings.arguments as String;
+      //   return CustomPageRoute(child: TryCustom(text: arg,),axisDirection: AxisDirection.down);
     }
-
 
     return MaterialPageRoute(
       builder: (context) => const Scaffold(
@@ -34,5 +47,4 @@ class MyRoutes
       ),
     );
   }
-
 }

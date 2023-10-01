@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/const.dart';
 import 'package:flutter/material.dart';
 
 class CustomAdvanceButton extends StatelessWidget {
@@ -11,7 +12,7 @@ class CustomAdvanceButton extends StatelessWidget {
       width: 100,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.deepPurple,
+        color: Constants.baseColor,
       ),
       child: Align(
         alignment: Alignment.center,
@@ -19,7 +20,7 @@ class CustomAdvanceButton extends StatelessWidget {
           text,
           style: const TextStyle(
             fontSize: 18,
-            color: Colors.white70,
+            color: Colors.white,
           ),
         ),
       ),

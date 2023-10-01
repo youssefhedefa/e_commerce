@@ -1,9 +1,11 @@
+import 'package:e_commerce/core/utils/const.dart';
 import 'package:e_commerce/core/utils/my_assets.dart';
 import 'package:e_commerce/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'widgets/custom_advance_button.dart';
 import 'widgets/custom_image_viewr.dart';
+import 'widgets/skip_button.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
@@ -48,23 +50,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, MyRoutes.logInView);
-                  },
-                  child: const Text(
-                    'Skip',
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            const SkipButton(),
             CustomImageViewer(pageController: pageController, children: images),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -74,7 +60,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     spacing: 10,
                     dotHeight: 16,
                     dotWidth: 18,
-                    activeDotColor: Colors.deepPurple,
+                    activeDotColor: Constants.baseColor,
                   ),
                   controller: pageController,
                   count: 3,
