@@ -1,5 +1,5 @@
-import 'package:e_commerce/core/utils/const.dart';
 import 'package:e_commerce/core/utils/firebase_services.dart';
+import 'package:e_commerce/features/registration/date/repos/check_state_methods.dart';
 import 'package:e_commerce/features/registration/date/repos/logInRepo/log_in_repo_impli.dart';
 import 'package:e_commerce/features/registration/date/repos/signInRepo/sign_up_repo_impli.dart';
 import 'package:flutter/material.dart';
@@ -24,14 +24,14 @@ class CustomForm extends StatefulWidget {
 }
 
 class _CustomFormState extends State<CustomForm> {
-
   GlobalKey<FormState> formKey = GlobalKey();
   String? email;
   String? password;
   bool visibility = false;
   final SignInRepoImpli signInRepoImpli = SignInRepoImpli();
   final LogInRepoImpli logInImpli = LogInRepoImpli();
-  final FireBaseServices _services = FireBaseServices();
+  final FireBaseServices services = FireBaseServices();
+  final CheckStateMethods checkStateMethods =CheckStateMethods();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -40,7 +40,7 @@ class _CustomFormState extends State<CustomForm> {
         children: [
           CustomTextFormField(
             label: 'Email',
-            onChanged: (value){
+            onChanged: (value) {
               email = value;
             },
             validator: widget.emailValidator,
@@ -49,23 +49,23 @@ class _CustomFormState extends State<CustomForm> {
           ),
           CustomTextFormField(
             label: 'Password',
-            onChanged: (value){
+            onChanged: (value) {
               password = value;
             },
             validator: widget.passwordValidator,
             suffixIcon: IconButton(
               onPressed: () {
                 setState(() {
-                  if(visibility == false)
-                  {
+                  if (visibility == false) {
                     visibility = true;
-                  }
-                  else{
+                  } else {
                     visibility = false;
                   }
                 });
               },
-              icon: visibility == true ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off),
+              icon: visibility == true
+                  ? const Icon(Icons.visibility)
+                  : const Icon(Icons.visibility_off),
             ),
             obscureText: visibility,
           ),
@@ -77,46 +77,31 @@ class _CustomFormState extends State<CustomForm> {
             decoration: const BoxDecoration(
               color: Colors.black,
             ),
-            child: Builder(
-              builder: (context) {
-                return MaterialButton(
-                  onPressed: () async {
-                    if(formKey.currentState!.validate())
-                    {
-                      if(widget.viewName == Constants.logInView)
-                      {
-                        //print(email! + password!);
-                        final response = await logInImpli.logIn(email!, password!);
-                        String message = response.toString();
-                        if(context.mounted){
-                          _services.checkResponseState(context, message, response);
-                        }
-
-                      }
-                      else if(widget.viewName == Constants.signInView){
-                        final response = await  signInRepoImpli.signIn(email!, password!);
-                        String message = response.toString();
-                        if(context.mounted){
-                          _services.checkResponseState(context, message, response);
-                        }
-                      }
-                    }
-                    else {
-                      return;
-                    }
-                  },
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      widget.buttonText,
-                      style:const TextStyle(
-                        color: Colors.white,
-                      ),
+            child: Builder(builder: (context) {
+              return MaterialButton(
+                onPressed: (){
+                  checkStateMethods.checkFormValidation(
+                    formKey: formKey,
+                    context: context,
+                    logInImpli: logInImpli,
+                    services: services,
+                    signInRepoImpli: signInRepoImpli,
+                    email: email,
+                    password: password,
+                    viewName: widget.viewName,
+                  );
+                },
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    widget.buttonText,
+                    style: const TextStyle(
+                      color: Colors.white,
                     ),
                   ),
-                );
-              }
-            ),
+                ),
+              );
+            }),
           ),
         ],
       ),

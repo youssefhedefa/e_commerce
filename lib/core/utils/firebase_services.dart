@@ -29,7 +29,7 @@ class FireBaseServices {
       if(context.mounted){
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: err != emailErr ? Text('error is $err'): const Text('Your email or password is not correct'),
+            content: err != emailErr ? Text(err): const Text('Your email or password is not correct'),
             duration: const Duration(seconds: 5),
           ),
         );
