@@ -10,7 +10,7 @@ class SocialMediaRow extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MobileDimensions.height*0.14,
+      height: MobileDimensions.getHeight(context)*0.14,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,

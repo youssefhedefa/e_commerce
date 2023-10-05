@@ -6,15 +6,16 @@ import 'package:flutter/material.dart';
 import 'logInRepo/log_in_repo_impli.dart';
 
 class CheckStateMethods {
+
+
+
   void checkFormValidation({
   required  GlobalKey<FormState> formKey,
     String? viewName,
-    //required  String logInView,
     required  LogInRepoImpli logInImpli,
     String? email,
     String? password,
     required  FireBaseServices services,
-    //required String signInView,
     required SignInRepoImpli signInRepoImpli,
     required BuildContext context,
 
@@ -43,4 +44,8 @@ class CheckStateMethods {
       return;
     }
   }
+
+
+
+
 }

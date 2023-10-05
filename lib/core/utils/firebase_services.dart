@@ -1,8 +1,11 @@
+import 'package:e_commerce/core/utils/my_routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class FireBaseServices {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+
 
   Future<UserCredential> createUser(String email, String password) async {
 
@@ -43,6 +46,7 @@ class FireBaseServices {
           duration: Duration(seconds: 3),
         ),
       );
+      Navigator.pushReplacementNamed(context, MyRoutes.homeView);
     }
   }
 

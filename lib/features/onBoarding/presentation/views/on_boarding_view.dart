@@ -39,6 +39,12 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       });
     });
   }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

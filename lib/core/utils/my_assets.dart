@@ -4,4 +4,9 @@ class MyAssets{
   static String thirdPanel = 'assets/images/third panel.png';
   static String facebook = 'assets/images/facebook.png';
   static String google = 'assets/images/google.png';
+  static String apparel = 'assets/images/apparel.png';
+  static String beauty = 'assets/images/beauty.png';
+  static String boot = 'assets/images/boot.png';
+  static String more = 'assets/images/more.png';
+
 }

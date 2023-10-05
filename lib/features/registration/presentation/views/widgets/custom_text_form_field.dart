@@ -7,7 +7,7 @@ class CustomTextFormField extends StatelessWidget {
         required this.label,
         required this.onChanged,
         this.validator,
-        this.suffixIcon, required this.obscureText,
+        this.suffixIcon, required this.obscureText, this.focusNode,
       })
       : super(key: key);
 
@@ -17,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
   final bool obscureText;
+  final FocusNode? focusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         suffixIcon: suffixIcon,
       ),
+      focusNode: focusNode,
       onChanged: onChanged,
       validator: validator,
       obscureText: obscureText,
