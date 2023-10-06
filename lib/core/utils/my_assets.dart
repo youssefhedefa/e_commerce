@@ -8,5 +8,9 @@ class MyAssets{
   static String beauty = 'assets/images/beauty.png';
   static String boot = 'assets/images/boot.png';
   static String more = 'assets/images/more.png';
+  static String summerBanner = 'assets/images/summer_banner.png';
+  static String sportBanner = 'assets/images/sport_banner.png';
+
+
 
 }

@@ -8,7 +8,7 @@ class CustomLabel extends StatelessWidget {
     return Text(
       label,
       style:const TextStyle(
-        fontSize: 24,
+        fontSize: 36,
         fontWeight: FontWeight.w900,
         letterSpacing: 1.8,
       ),
