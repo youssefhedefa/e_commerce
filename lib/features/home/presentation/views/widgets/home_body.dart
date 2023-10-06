@@ -11,26 +11,37 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Padding(
-        padding: EdgeInsets.only(left: 20.0, right: 20, top: 10),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomAppBar(),
-            CustomLabel(label: 'Categories'),
-            CustomCategoryList(),
-            CustomLabel(label: 'Latest'),
-            SizedBox(
-              height: 12,
-            ),
-            OfferList(),
-            SizedBox(
-              height: 16,
-            ),
-            RecommendationList(),
+    return const DecoratedBox(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          transform: GradientRotation(80),
+          colors: [
+            Color.fromRGBO(245, 246, 248, 1),
+            Color.fromRGBO(255, 255, 255, 1),
           ],
+        ),
+      ),
+      child: const SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(left: 20.0, right: 20, top: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomAppBar(),
+              CustomLabel(label: 'Categories'),
+              CustomCategoryList(),
+              CustomLabel(label: 'Latest'),
+              SizedBox(
+                height: 12,
+              ),
+              OfferList(),
+              SizedBox(
+                height: 16,
+              ),
+              RecommendationList(),
+            ],
+          ),
         ),
       ),
     );
