@@ -15,6 +15,7 @@ class OffersItem extends StatelessWidget {
         children: [
           Container(
             width: MobileDimensions.getWidth(context)-40,
+            height: MobileDimensions.getHeight(context)*0.25,
             decoration: BoxDecoration(
               borderRadius: BorderRadiusDirectional.circular(20),
             ),
