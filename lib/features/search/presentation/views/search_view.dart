@@ -2,7 +2,6 @@ import 'package:e_commerce/core/utils/my_assets.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_label.dart';
 import 'package:flutter/material.dart';
-
 import 'widgets/custom_search_field.dart';
 import 'widgets/recently_item.dart';
 import 'widgets/recently_viewed_text.dart';
