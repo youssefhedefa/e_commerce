@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:e_commerce/features/cart/presentation/views/cart_view.dart';
 import 'package:e_commerce/features/home/presentation/manager/home_states.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/home_body.dart';
 import 'package:e_commerce/features/search/presentation/views/search_view.dart';
@@ -26,7 +27,7 @@ class HomeCubit extends Cubit<HomeStates> {
   List<Widget> views = [
     const HomeBody(),
     const SearchView(),
-    const HomeBody(),
+    const CartView(),
     const SearchView(),
     const HomeBody(),
   ];
