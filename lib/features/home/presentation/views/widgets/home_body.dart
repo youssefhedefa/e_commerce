@@ -21,7 +21,7 @@ class HomeBody extends StatelessWidget {
           ],
         ),
       ),
-      child: const SafeArea(
+      child: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(left: 20.0, right: 20, top: 10),
           child: Column(

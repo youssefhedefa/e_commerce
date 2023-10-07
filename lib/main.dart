@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.onBoardingView,
+      initialRoute: MyRoutes.homeView,
     );
   }
 }

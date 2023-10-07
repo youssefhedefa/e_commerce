@@ -1,22 +1,49 @@
+import 'package:e_commerce/features/home/presentation/manager/home_cubit.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({Key? key}) : super(key: key);
+  const CustomBottomNavigationBar({Key? key, required this.cubit,}) : super(key: key);
+
+  final HomeCubit cubit;
+
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: 0,
+      onTap: (index) {
+        cubit.changeIndex(index);
+      },
+      currentIndex: cubit.getCurrentIndex(),
       selectedItemColor: const Color.fromRGBO(239, 86, 95, 1),
       unselectedItemColor: Colors.black,
       showSelectedLabels: true,
       showUnselectedLabels: true,
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Color.fromRGBO(239, 86, 95, 1),),label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.search_outlined,color: Colors.black,),label: 'search'),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart_outlined,color: Colors.black,),label: 'Cart'),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outlined,color: Colors.black,),label: 'Profile'),
-        BottomNavigationBarItem(icon: Icon(Icons.reorder_outlined,color: Colors.black,),label: 'More'),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_outlined,
+            ),
+            label: 'Home'),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search_outlined,
+            ),
+            label: 'search'),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_cart_outlined,
+            ),
+            label: 'Cart'),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_outlined,
+            ),
+            label: 'Profile'),
+        BottomNavigationBarItem(
+            icon: Icon(
+              Icons.reorder_outlined,
+            ),
+            label: 'More'),
       ],
     );
   }

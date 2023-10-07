@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/utils/mobile_dimensions.dart';
-import 'package:e_commerce/core/utils/widgets/welcomPanel.dart';
+import 'package:e_commerce/core/utils/widgets/welcome_panel.dart';
 import 'package:flutter/material.dart';
 import 'custom_form.dart';
 import 'footer.dart';

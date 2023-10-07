@@ -1,7 +1,8 @@
-import 'package:e_commerce/features/home/presentation/home_view.dart';
+import 'package:e_commerce/features/home/presentation/views/home_view.dart';
 import 'package:e_commerce/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:e_commerce/features/registration/presentation/views/log_in_view.dart';
 import 'package:e_commerce/features/registration/presentation/views/sign_in_view.dart';
+import 'package:e_commerce/features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_page_route.dart';
@@ -11,7 +12,8 @@ class MyRoutes {
   static const logInView = '/logIn';
   static const signUpView = '/signUp';
   static const homeView = '/home';
-  //static const signUpView2 = '/signUp2';
+  static const searchView = '/search';
+
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -44,9 +46,11 @@ class MyRoutes {
           axisDirection: AxisDirection.left,
         );
 
-      // case signUpView2:
-      //   var arg = settings.arguments as String;
-      //   return CustomPageRoute(child: TryCustom(text: arg,),axisDirection: AxisDirection.down,setting:arg);
+      case searchView:
+        return CustomPageRoute(
+          child: const SearchView(),
+          axisDirection: AxisDirection.left,
+        );
     }
 
     return MaterialPageRoute(
