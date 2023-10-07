@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'custom_app_bar.dart';
 import 'custom_label.dart';
 import 'items/offer_list.dart';
