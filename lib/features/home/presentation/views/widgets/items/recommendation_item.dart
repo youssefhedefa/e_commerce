@@ -12,7 +12,7 @@ class RecommendationItems extends StatelessWidget {
       padding: const EdgeInsets.only(left: 10.0),
       child: Container(
         width: MobileDimensions.getWidth(context) * 0.28,
-        height: MobileDimensions.getHeight(context) * 0.18,
+        height: MobileDimensions.getHeight(context) * 0.2,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadiusDirectional.circular(20),

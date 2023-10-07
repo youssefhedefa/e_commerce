@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/utils/mobile_dimensions.dart';
 import 'package:e_commerce/core/utils/my_assets.dart';
-import 'package:e_commerce/features/home/presentation/views/widgets/list/offer_item.dart';
+import 'package:e_commerce/features/home/presentation/views/widgets/items/offer_item.dart';
 import 'package:flutter/material.dart';
 
 class OfferList extends StatelessWidget {
