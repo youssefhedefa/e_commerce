@@ -1,7 +1,7 @@
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
-
 import 'widgets/custom_profile_label.dart';
+import 'widgets/second_options_container.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -21,6 +21,14 @@ class ProfileView extends StatelessWidget {
               children: [
                 CustomAppBar(),
                 CustomProfileLabel(),
+                SizedBox(
+                  height: 30,
+                ),
+                SecondOptionsContainer(),
+                SizedBox(
+                  height: 26,
+                ),
+                SecondOptionsContainer(),
               ],
             ),
           ),
@@ -29,3 +37,6 @@ class ProfileView extends StatelessWidget {
     );
   }
 }
+
+
+

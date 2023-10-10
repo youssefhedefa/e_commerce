@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/mobile_dimensions.dart';
 import 'package:e_commerce/core/utils/my_assets.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class CustomProfileLabel extends StatelessWidget {
           width: 20,
         ),
         SizedBox(
-          height: 132,
+          height: MobileDimensions.getHeight(context)*0.15,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
