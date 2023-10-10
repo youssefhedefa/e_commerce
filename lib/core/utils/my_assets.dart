@@ -13,6 +13,7 @@ class MyAssets{
   static String scarf = 'assets/images/scarf.png';
   static String backpack = 'assets/images/backpack.png';
   static String shoes = 'assets/images/shoes.png';
+  static String profileImage = 'assets/images/profile_image.jpg';
 
 
 
