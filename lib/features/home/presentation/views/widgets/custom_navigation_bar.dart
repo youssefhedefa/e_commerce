@@ -39,11 +39,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
               Icons.person_outlined,
             ),
             label: 'Profile'),
-        BottomNavigationBarItem(
-            icon: Icon(
-              Icons.reorder_outlined,
-            ),
-            label: 'More'),
       ],
     );
   }

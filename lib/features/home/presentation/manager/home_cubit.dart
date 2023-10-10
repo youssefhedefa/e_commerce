@@ -30,7 +30,5 @@ class HomeCubit extends Cubit<HomeStates> {
     const SearchView(),
     const CartView(),
     const ProfileView(),
-    const HomeBody(),
   ];
-
 }
