@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ItemCounter extends StatelessWidget {
+class ItemCounter extends StatefulWidget {
   const ItemCounter({Key? key}) : super(key: key);
+
+  @override
+  State<ItemCounter> createState() => _ItemCounterState();
+}
+
+class _ItemCounterState extends State<ItemCounter> {
+
+  int _counter = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +20,11 @@ class ItemCounter extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                _counter++;
+              });
+            },
             icon: Icon(
               Icons.add_circle_outline,
               size: 40,
@@ -23,15 +35,19 @@ class ItemCounter extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8,),
-          const Text(
-            '1',
-            style: TextStyle(
+          Text(
+            _counter.toString(),
+            style:const TextStyle(
                 fontSize: 18
             ),
           ),
           const SizedBox(width: 8,),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                _counter--;
+              });
+            },
             icon: Icon(
               Icons.remove_circle_outline,
               size: 40,

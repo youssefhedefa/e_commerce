@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/utils/mobile_dimensions.dart';
+import 'package:e_commerce/features/home/presentation/views/widgets/custom_see_more_item.dart';
 import 'package:flutter/material.dart';
 
 class OffersItem extends StatelessWidget {
@@ -27,39 +28,7 @@ class OffersItem extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 10,
-            left: 10,
-            child: Container(
-              width: 130,
-              height: 56,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadiusDirectional.circular(40),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'SEE MORE',
-                    style: TextStyle(
-                      color: Colors.grey[600],
-
-                    ),
-                  ),
-                  const SizedBox(width: 10,),
-                  CircleAvatar(
-                    backgroundColor: color,
-                    child:const Icon(
-                      Icons.navigate_next,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          CustomSeeMoreItem(color: color),
         ],
       ),
     );

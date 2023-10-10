@@ -1,10 +1,9 @@
-import 'package:e_commerce/core/utils/mobile_dimensions.dart';
-import 'package:e_commerce/core/utils/my_assets.dart';
+import 'package:e_commerce/features/cart/presentation/views/widgets/custom_divider.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_label.dart';
 import 'package:flutter/material.dart';
-
-import 'widgets/cart_item.dart';
+import 'widgets/cart_footer.dart';
+import 'widgets/custom_cart_list.dart';
 
 class CartView extends StatelessWidget {
   const CartView({Key? key}) : super(key: key);
@@ -27,7 +26,9 @@ class CartView extends StatelessWidget {
               SizedBox(
                 height: 18,
               ),
-              CartItem(),
+              CustomCartList(),
+              CustomDivider(width: double.infinity),
+              CartFooter()
             ],
           ),
         ),
@@ -35,4 +36,5 @@ class CartView extends StatelessWidget {
     );
   }
 }
+
 
