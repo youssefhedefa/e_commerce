@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-
 class CustomNotifyIcon extends StatelessWidget {
-  const CustomNotifyIcon({Key? key, this.onPressed,required this.icon, this.number}) : super(key: key);
+  const CustomNotifyIcon(
+      {Key? key, this.onPressed, required this.icon, this.number})
+      : super(key: key);
 
   final void Function()? onPressed;
   final IconData icon;
@@ -10,37 +11,36 @@ class CustomNotifyIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        IconButton(
-          onPressed: onPressed,
-          icon: Icon(
+    return GestureDetector(
+      onTap: onPressed,
+      child: Stack(
+        children: [
+          Icon(
             icon,
             size: 32,
           ),
-        ),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            width: 22,
-            height: 18,
-            decoration: BoxDecoration(
-                color: Colors.redAccent,
-                borderRadius: BorderRadius.circular(8)
-            ),
-            child:  Align(
-              alignment: Alignment.topCenter,
-              child: Text(
-                number ?? '',
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              width: 22,
+              height: 18,
+              decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(8)),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: Text(
+                  number ?? '',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

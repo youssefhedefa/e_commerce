@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/utils/mobile_dimensions.dart';
+import 'package:e_commerce/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
-
 import 'custom_notify_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -17,10 +17,12 @@ class CustomAppBar extends StatelessWidget {
         children: [
           CustomNotifyIcon(
             icon: Icons.mode_comment_outlined,
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushNamed(context, MyRoutes.messageView);
+            },
             number: '10',
           ),
-          const SizedBox(width: 8,),
+          const SizedBox(width: 20,),
           CustomNotifyIcon(
             icon: Icons.notifications_none_outlined,
             onPressed: (){},

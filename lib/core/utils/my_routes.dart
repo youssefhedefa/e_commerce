@@ -1,4 +1,5 @@
 import 'package:e_commerce/features/home/presentation/views/home_view.dart';
+import 'package:e_commerce/features/messages/presentation/views/message_view.dart';
 import 'package:e_commerce/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:e_commerce/features/registration/presentation/views/log_in_view.dart';
 import 'package:e_commerce/features/registration/presentation/views/sign_in_view.dart';
@@ -13,6 +14,7 @@ class MyRoutes {
   static const signUpView = '/signUp';
   static const homeView = '/home';
   static const searchView = '/search';
+  static const messageView = '/message';
 
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -50,6 +52,11 @@ class MyRoutes {
         return CustomPageRoute(
           child: const SearchView(),
           axisDirection: AxisDirection.left,
+        );
+      case messageView:
+        return CustomPageRoute(
+          child: const MessageView(),
+          axisDirection: AxisDirection.down,
         );
     }
 
