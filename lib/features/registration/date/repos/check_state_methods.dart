@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/utils/const.dart';
-import 'package:e_commerce/core/utils/firebase_services.dart';
+import 'package:e_commerce/core/utils/services/firebase_services.dart';
 import 'package:e_commerce/features/registration/date/repos/signInRepo/sign_up_repo_impli.dart';
 import 'package:flutter/material.dart';
 

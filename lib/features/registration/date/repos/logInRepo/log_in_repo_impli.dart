@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_commerce/core/utils/firebase_services.dart';
+import 'package:e_commerce/core/utils/services/firebase_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LogInRepoImpli{

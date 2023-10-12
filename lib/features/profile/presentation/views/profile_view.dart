@@ -17,7 +17,7 @@ class ProfileView extends StatelessWidget {
           Container(
             color: const Color.fromRGBO(245, 246, 248, 1),
           ),
-            Padding(
+          Padding(
             padding: const EdgeInsets.only(left: 20.0, right: 20, top: 10),
             child: Column(
               children: [
@@ -45,12 +45,11 @@ class ProfileView extends StatelessWidget {
                         height: 50,
                         child: Center(
                           child: Text(
-                              'LOG OUT',
+                            'LOG OUT',
                             style: TextStyle(
-                              color: Color.fromRGBO(239, 86, 95, 1),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18
-                            ),
+                                color: Color.fromRGBO(239, 86, 95, 1),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18),
                           ),
                         ),
                       ),
@@ -68,6 +67,3 @@ class ProfileView extends StatelessWidget {
     );
   }
 }
-
-
-

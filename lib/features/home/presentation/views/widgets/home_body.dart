@@ -21,27 +21,29 @@ class HomeBody extends StatelessWidget {
         ),
       ),
       child: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.only(left: 20.0, right: 20, top: 10),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomAppBar(),
-                CustomLabel(label: 'Categories'),
-                CustomCategoryList(),
-                CustomLabel(label: 'Latest'),
-                SizedBox(
-                  height: 12,
+        child: Padding(
+          padding: EdgeInsets.only(left: 20.0, right: 20, top: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomAppBar(),
+              CustomLabel(label: 'Categories'),
+              SizedBox(height: 10,),
+              CustomCategoryList(),
+              Expanded(child: SizedBox(height: 8,)),
+              CustomLabel(label: 'Latest'),
+              SizedBox(
+                height: 12,
+              ),
+              OfferList(),
+              Expanded(
+                child: SizedBox(
+                  height: 2,
                 ),
-                OfferList(),
-                SizedBox(
-                  height: 16,
-                ),
-                RecommendationList(),
-              ],
-            ),
+              ),
+              RecommendationList(),
+            ],
           ),
         ),
       ),
