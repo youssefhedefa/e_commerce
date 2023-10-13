@@ -19,7 +19,7 @@ class CustomProfileLabel extends StatelessWidget {
           width: 20,
         ),
         SizedBox(
-          height: MobileDimensions.getHeight(context)*0.15,
+          height: MobileDimensions.getHeight(context)*0.155,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

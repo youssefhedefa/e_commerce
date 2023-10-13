@@ -12,7 +12,7 @@ class CustomCartList extends StatelessWidget {
     return Flexible(
       child: ListView.separated(
           itemBuilder: ((context, index) => const CartItem()),
-          separatorBuilder: (context, index) =>  CustomDivider(width: MobileDimensions.getWidth(context)-40-76*2,),
+          separatorBuilder: (context, index) =>  CustomDivider(width: MobileDimensions.getWidth(context)-40-50*2,),
           itemCount: 3),
     );
   }

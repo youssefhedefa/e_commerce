@@ -17,8 +17,6 @@ class MyRoutes {
   static const searchView = '/search';
   static const messageView = '/message';
   static const chatView = '/chat';
-  static const notify = '';
-
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -66,6 +64,8 @@ class MyRoutes {
           child: const ChatView(),
           axisDirection: AxisDirection.left,
         );
+
+
     }
 
     return MaterialPageRoute(

@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/utils/mobile_dimensions.dart';
 import 'package:e_commerce/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_notify_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -9,8 +10,8 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MobileDimensions.getWidth(context),
-      height: 60,
+      width: MobileDimensions.getWidth(context).w,
+      height: 40.h,
       color: Colors.transparent,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -22,13 +23,7 @@ class CustomAppBar extends StatelessWidget {
             },
             number: '10',
           ),
-          const SizedBox(width: 20,),
-          CustomNotifyIcon(
-            icon: Icons.notifications_none_outlined,
-            onPressed: (){},
-            number: '5',
-          ),
-
+          SizedBox(width: 20.w,),
         ],
       ),
     );

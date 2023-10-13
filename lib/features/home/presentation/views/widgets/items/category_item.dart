@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCategoryItem extends StatelessWidget {
   const CustomCategoryItem({
@@ -13,21 +14,21 @@ class CustomCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 4.0),
+      padding: EdgeInsets.only(right: 4.0.w),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
           Container(
-            height: 100,
-            width: 118,
-            decoration: BoxDecoration(
+            height: 100.h,
+            width: 118.w,
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage(
-                  imageName,
-                ),
-              ),
-              gradient: const LinearGradient(
+              // image: DecorationImage(
+              //   image: AssetImage(
+              //     imageName,
+              //   ),
+              // ),
+              gradient: LinearGradient(
                 transform: GradientRotation(80),
                 colors: [
                   Color.fromRGBO(244, 120, 114, 1),
@@ -35,13 +36,26 @@ class CustomCategoryItem extends StatelessWidget {
                 ],
               ),
             ),
+            child: SizedBox(
+              height: 50.h,
+              width: 50.w,
+              child: CircleAvatar(
+                radius: 20,
+                backgroundColor: Colors.transparent,
+                child: Image(
+                  height: 80.h,
+                  width: 80.w,
+                  image: AssetImage(imageName),
+                ),
+              ),
+            ),
           ),
           const Spacer(),
           Text(
             categoryLabel,
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 20,
+              fontSize: 20.sp,
             ),
           ),
         ],

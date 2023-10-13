@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomNotifyIcon extends StatelessWidget {
   const CustomNotifyIcon(
@@ -17,13 +18,13 @@ class CustomNotifyIcon extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: 32,
+            size: 32.sp,
           ),
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
-              width: 22,
-              height: 18,
+              width: 22.w,
+              height: 18.h,
               decoration: BoxDecoration(
                   color: Colors.redAccent,
                   borderRadius: BorderRadius.circular(8)),
@@ -31,9 +32,9 @@ class CustomNotifyIcon extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 child: Text(
                   number ?? '',
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 12,
+                    fontSize: 12.sp,
                   ),
                 ),
               ),

@@ -29,19 +29,13 @@ class HomeBody extends StatelessWidget {
             children: [
               CustomAppBar(),
               CustomLabel(label: 'Categories'),
-              SizedBox(height: 10,),
+              Expanded(child: SizedBox(height: 8,)),
               CustomCategoryList(),
               Expanded(child: SizedBox(height: 8,)),
               CustomLabel(label: 'Latest'),
-              SizedBox(
-                height: 12,
-              ),
+              Expanded(child: SizedBox(height: 8,)),
               OfferList(),
-              Expanded(
-                child: SizedBox(
-                  height: 2,
-                ),
-              ),
+              Expanded(child: SizedBox(height: 8,)),
               RecommendationList(),
             ],
           ),

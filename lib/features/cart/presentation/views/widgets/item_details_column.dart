@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'item_counter.dart';
 
@@ -11,13 +12,13 @@ class ItemDetailsColumn extends StatelessWidget {
       padding: const EdgeInsets.only(top: 16.0, left: 22),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          const Text(
+          Text(
             'Red Scarf',
             style: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 20,
+              fontSize: 20.sp,
             ),
           ),
           Text(
@@ -25,16 +26,16 @@ class ItemDetailsColumn extends StatelessWidget {
             style: TextStyle(
               color: Colors.grey[600],
               fontWeight: FontWeight.w400,
-              fontSize: 22,
+              fontSize: 22.sp,
             ),
           ),
           const Spacer(),
-          const Text(
+           Text(
             '\$ 20.00',
             style: TextStyle(
               fontWeight: FontWeight.w800,
-              fontSize: 18,
-              color: Color.fromRGBO(242, 111, 106, 1),
+              fontSize: 18.sp,
+              color:const Color.fromRGBO(242, 111, 106, 1),
             ),
           ),
           const Spacer(),

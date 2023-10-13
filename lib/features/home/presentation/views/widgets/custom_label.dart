@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomLabel extends StatelessWidget {
   const CustomLabel({Key? key, required this.label}) : super(key: key);
@@ -7,8 +8,8 @@ class CustomLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       label,
-      style:const TextStyle(
-        fontSize: 36,
+      style: TextStyle(
+        fontSize: 34.sp,
         fontWeight: FontWeight.w900,
         letterSpacing: 1.8,
       ),

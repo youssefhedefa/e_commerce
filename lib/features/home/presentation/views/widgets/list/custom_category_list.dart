@@ -1,14 +1,14 @@
 import 'package:e_commerce/core/utils/my_assets.dart';
 import 'package:e_commerce/features/home/presentation/views/widgets/items/category_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomCategoryList extends StatelessWidget {
   const CustomCategoryList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      //width: MobileDimensions.getWidth(context),
-      height: 146,
+      height: 130.h,
       child: ListView(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
@@ -22,7 +22,7 @@ class CustomCategoryList extends StatelessWidget {
             imageName: MyAssets.electronic,
           ),
           CustomCategoryItem(
-            categoryLabel: 'Shoes',
+            categoryLabel: 'Sports',
             imageName: MyAssets.sport,
           ),
           CustomCategoryItem(

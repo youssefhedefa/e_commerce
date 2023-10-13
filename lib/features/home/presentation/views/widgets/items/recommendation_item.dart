@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/utils/mobile_dimensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecommendationItems extends StatelessWidget {
   const RecommendationItems({Key? key, required this.image, required this.name, required this.price}) : super(key: key);
@@ -9,24 +10,25 @@ class RecommendationItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10.0),
+      padding: EdgeInsets.only(left: 10.0.w),
       child: Container(
-        width: MobileDimensions.getWidth(context) * 0.28,
-        height: MobileDimensions.getHeight(context) * 0.2,
+        width: MobileDimensions.getWidth(context) * 0.28.w,
+        height: MobileDimensions.getHeight(context) * 0.175.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadiusDirectional.circular(20),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 14.0),
+          padding: EdgeInsets.only(left: 14.0.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Align(
                 alignment: Alignment.center,
                 child: Image(
-                  height: 96,
-                  width: 96,
+                  height: 80.h,
+                  width: 80.w,
                   fit: BoxFit.fill,
                   image: AssetImage(
                     image,
@@ -37,6 +39,7 @@ class RecommendationItems extends StatelessWidget {
                 name,
                 style: TextStyle(
                   color: Colors.grey[600],
+                  fontSize: 16.sp
                 ),
               ),
               Text(
