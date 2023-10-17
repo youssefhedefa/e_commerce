@@ -35,6 +35,7 @@ class RecommendationItems extends StatelessWidget {
                   ),
                 ),
               ),
+              const Expanded(child: SizedBox(height: 3,)),
               Text(
                 name,
                 style: TextStyle(
@@ -42,12 +43,14 @@ class RecommendationItems extends StatelessWidget {
                   fontSize: 16.sp
                 ),
               ),
+              const Expanded(child: SizedBox(height: 3,)),
               Text(
                 price,
                 style:const TextStyle(
                     fontWeight: FontWeight.w700
                 ),
               ),
+              const Expanded(child: SizedBox(height: 3,)),
             ],
           ),
         ),
