@@ -2,7 +2,7 @@ import 'package:e_commerce/core/utils/mobile_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'action_buttons_row.dart';
 import 'list_item_color.dart';
-import '../list_label.dart';
+import '../subItemDetails/list_label.dart';
 import 'size_list.dart';
 
 class ItemProductNavigatorViewer extends StatelessWidget {

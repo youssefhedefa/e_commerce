@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'item_details_app_bar.dart';
-import 'item_pic.dart';
-import 'navigator_list.dart';
-import 'productSection/item_product_navigator_viewer.dart';
+import 'reviewsSection/item_reviews_navigator_viewer.dart';
+import 'subItemDetails/item_pic.dart';
+import 'subItemDetails/navigator_list.dart';
 
 class ItemDetailsView extends StatelessWidget {
   const ItemDetailsView({Key? key}) : super(key: key);
@@ -26,7 +26,8 @@ class ItemDetailsView extends StatelessWidget {
               ItemDetailsAppBar(),
               ItemPic(),
               NavigatorList(),
-              ItemProductNavigatorViewer(),
+              //ItemProductNavigatorViewer(),
+              ItemReviewsNavigatorViewer()
             ],
           ),
         ),
@@ -34,8 +35,5 @@ class ItemDetailsView extends StatelessWidget {
     );
   }
 }
-
-
-
 
 
