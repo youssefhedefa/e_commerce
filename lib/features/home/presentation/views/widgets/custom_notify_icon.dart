@@ -12,19 +12,20 @@ class CustomNotifyIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
+    return MaterialButton(
+      onPressed: onPressed,
       child: Stack(
         children: [
           Icon(
             icon,
             size: 32.sp,
+            color: Colors.black,
           ),
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
-              width: 22.w,
-              height: 18.h,
+              width: 20.w,
+              height: 16.h,
               decoration: BoxDecoration(
                   color: Colors.redAccent,
                   borderRadius: BorderRadius.circular(8)),

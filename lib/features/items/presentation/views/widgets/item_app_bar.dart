@@ -37,5 +37,5 @@ class ItemAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(110);
+  Size get preferredSize => const Size.fromHeight(110);
 }
