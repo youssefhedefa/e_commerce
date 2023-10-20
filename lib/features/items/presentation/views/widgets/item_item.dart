@@ -3,6 +3,8 @@ import 'package:e_commerce/core/utils/my_assets.dart';
 import 'package:e_commerce/core/utils/my_routes.dart';
 import 'package:flutter/material.dart';
 
+import 'itemDetails/productSection/item_product_navigator_viewer.dart';
+
 class ItemItem extends StatelessWidget {
   const ItemItem({Key? key}) : super(key: key);
 
@@ -10,7 +12,7 @@ class ItemItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context, MyRoutes.itemDetailsView);
+        Navigator.pushNamed(context, MyRoutes.itemDetailsView, arguments: const ItemProductNavigatorViewer());
       },
       child: Container(
         width: (MobileDimensions.getWidth(context) / 2) - 40,

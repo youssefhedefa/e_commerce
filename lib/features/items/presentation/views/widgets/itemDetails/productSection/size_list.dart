@@ -33,7 +33,7 @@ class _SizeListState extends State<SizeList> {
           );
         },
         separatorBuilder: (BuildContext context, int index) {
-          return SizedBox(
+          return const SizedBox(
             width: 12,
           );
         },

@@ -76,6 +76,7 @@ class MyRoutes {
         );
 
       case itemDetailsView:
+       // var arg = settings.arguments as Widget;
         return CustomPageRoute(
           child: const ItemDetailsView(),
           axisDirection: AxisDirection.left,

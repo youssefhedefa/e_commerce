@@ -21,7 +21,6 @@ class Rating extends StatelessWidget {
           color: Color.fromRGBO(243, 104, 100, 1),
         ),
         onRatingUpdate: (rating) {
-          print(rating);
         },
       ),
     );
