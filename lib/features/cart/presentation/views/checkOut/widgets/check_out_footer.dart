@@ -31,7 +31,7 @@ class CheckOutFooter extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '11.00\$',
+                    '60.00\$',
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w800,
@@ -54,7 +54,7 @@ class CheckOutFooter extends StatelessWidget {
                 buttonBackGround: Color.fromRGBO(244, 104, 102, 1),
                 textColor: Colors.white,
                 iconBackGround: Colors.white,
-                buttonText: 'ADD TO CART',
+                buttonText: 'PLACE ORDER',
                 icon: Icon(
                   Icons.arrow_forward_ios_outlined,
                   color: Color.fromRGBO(244, 104, 102, 1),

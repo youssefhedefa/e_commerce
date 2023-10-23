@@ -15,5 +15,6 @@ class MyAssets{
   static String shoes = 'assets/images/shoes.png';
   static String profileImage = 'assets/images/profile_image.jpg';
   static String tShirt = 'assets/images/t_shirt.png';
+  static String mastercard = 'assets/images/mastercard.png';
 
 }
