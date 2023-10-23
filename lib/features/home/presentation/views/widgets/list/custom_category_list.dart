@@ -11,28 +11,34 @@ class CustomCategoryList extends StatelessWidget {
     return SizedBox(
       height: 130.h,
       child: ListView(
-       // physics: const BouncingScrollPhysics(),
-        physics: const NeverScrollableScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
+        //physics: const NeverScrollableScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: [
-          CustomCategoryItem(
-            categoryLabel: 'Apparel',
-            imageName: MyAssets.apparel,
-            onTap: (){
-              Navigator.pushNamed(context, MyRoutes.itemsView);
-            },
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: CustomCategoryItem(
+              categoryLabel: 'Apparel',
+              imageName: MyAssets.apparel,
+              onTap: (){
+                Navigator.pushNamed(context, MyRoutes.itemsView);
+              },
+            ),
           ),
-          const Expanded(child: SizedBox(width: 6,)),
-          CustomCategoryItem(
-            categoryLabel: 'Electronics',
-            imageName: MyAssets.electronic,
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: CustomCategoryItem(
+              categoryLabel: 'Electronics',
+              imageName: MyAssets.electronic,
+            ),
           ),
-          const Expanded(child: SizedBox(width: 6,)),
-          CustomCategoryItem(
-            categoryLabel: 'Sports',
-            imageName: MyAssets.sport,
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: CustomCategoryItem(
+              categoryLabel: 'Sports',
+              imageName: MyAssets.sport,
+            ),
           ),
-          const Expanded(child: SizedBox(width: 6,)),
           CustomCategoryItem(
             categoryLabel: 'More',
             imageName: MyAssets.more,

@@ -15,7 +15,7 @@ class CustomCategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: (MobileDimensions.getWidth(context)-60)/4,
+      width: (MobileDimensions.getWidth(context)-80)/4,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
