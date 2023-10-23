@@ -38,19 +38,21 @@ class RecommendationItems extends StatelessWidget {
               const Expanded(child: SizedBox(height: 3,)),
               Text(
                 name,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: Colors.grey[600],
                   fontSize: 16.sp
                 ),
               ),
-              const Expanded(child: SizedBox(height: 3,)),
+              //const Expanded(child: SizedBox(height: 3,)),
               Text(
                 price,
                 style:const TextStyle(
                     fontWeight: FontWeight.w700
                 ),
               ),
-              const Expanded(child: SizedBox(height: 3,)),
+              const Expanded(child: SizedBox(height: 10,)),
             ],
           ),
         ),

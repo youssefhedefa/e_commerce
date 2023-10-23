@@ -13,18 +13,22 @@ class CustomAppBar extends StatelessWidget {
       width: MobileDimensions.getWidth(context).w,
       height: 40.h,
       color: Colors.transparent,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          CustomNotifyIcon(
-            icon: Icons.mode_comment_outlined,
-            onPressed: (){
-              Navigator.pushNamed(context, MyRoutes.messageView);
-            },
-            number: '10',
-          ),
-          SizedBox(width: 20.w,),
-        ],
+      child: SizedBox(
+        width: 20,
+        height: 40,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            CustomNotifyIcon(
+              icon: Icons.mode_comment_outlined,
+              onPressed: (){
+                Navigator.pushNamed(context, MyRoutes.messageView);
+              },
+              number: '10',
+            ),
+            //SizedBox(width: 20.w,),
+          ],
+        ),
       ),
     );
   }

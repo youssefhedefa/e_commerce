@@ -11,7 +11,8 @@ class CustomCategoryList extends StatelessWidget {
     return SizedBox(
       height: 130.h,
       child: ListView(
-        physics: const BouncingScrollPhysics(),
+       // physics: const BouncingScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: [
           CustomCategoryItem(
@@ -21,14 +22,17 @@ class CustomCategoryList extends StatelessWidget {
               Navigator.pushNamed(context, MyRoutes.itemsView);
             },
           ),
+          const Expanded(child: SizedBox(width: 6,)),
           CustomCategoryItem(
             categoryLabel: 'Electronics',
             imageName: MyAssets.electronic,
           ),
+          const Expanded(child: SizedBox(width: 6,)),
           CustomCategoryItem(
             categoryLabel: 'Sports',
             imageName: MyAssets.sport,
           ),
+          const Expanded(child: SizedBox(width: 6,)),
           CustomCategoryItem(
             categoryLabel: 'More',
             imageName: MyAssets.more,

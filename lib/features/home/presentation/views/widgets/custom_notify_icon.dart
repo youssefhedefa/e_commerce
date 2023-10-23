@@ -14,6 +14,8 @@ class CustomNotifyIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: Stack(
         children: [
           Icon(
