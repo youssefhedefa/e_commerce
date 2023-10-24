@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/utils/mobile_dimensions.dart';
+import 'package:e_commerce/core/utils/my_routes.dart';
 import 'package:e_commerce/features/items/presentation/views/widgets/itemDetails/productSection/action_button.dart';
 import 'package:flutter/material.dart';
 
@@ -50,15 +51,20 @@ class CheckOutFooter extends StatelessWidget {
             ),
             SizedBox(
               width: (MobileDimensions.getWidth(context) - 40) / 2,
-              child: const ActionButton(
-                buttonBackGround: Color.fromRGBO(244, 104, 102, 1),
-                textColor: Colors.white,
-                iconBackGround: Colors.white,
-                buttonText: 'PLACE ORDER',
-                icon: Icon(
-                  Icons.arrow_forward_ios_outlined,
-                  color: Color.fromRGBO(244, 104, 102, 1),
-                  size: 26,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, MyRoutes.orderPlacedView);
+                },
+                child: const ActionButton(
+                  buttonBackGround: Color.fromRGBO(244, 104, 102, 1),
+                  textColor: Colors.white,
+                  iconBackGround: Colors.white,
+                  buttonText: 'PLACE ORDER',
+                  icon: Icon(
+                    Icons.arrow_forward_ios_outlined,
+                    color: Color.fromRGBO(244, 104, 102, 1),
+                    size: 26,
+                  ),
                 ),
               ),
             ),

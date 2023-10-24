@@ -5,7 +5,9 @@ import 'package:e_commerce/features/cart/presentation/views/widgets/custom_cart_
 import 'package:e_commerce/features/home/presentation/views/widgets/custom_label.dart';
 import 'package:flutter/material.dart';
 import 'widgets/check_out_address.dart';
+import 'widgets/check_out_divider.dart';
 import 'widgets/check_out_footer.dart';
+import 'widgets/exit_button.dart';
 
 class CheckOutView extends StatelessWidget {
   const CheckOutView({Key? key}) : super(key: key);
@@ -28,19 +30,7 @@ class CheckOutView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(
-                          Icons.close,
-                          size: 34,
-                          color: Color.fromRGBO(243, 104, 100, 1),
-                        ),
-                      ),
-                    ),
+                    const ExitButton(),
                     const CustomLabel(label: 'Checkout'),
                     const SizedBox(height: 16,),
                     const CheckOutLabel(text: 'SHIPPING ADDRESS'),
@@ -85,20 +75,5 @@ class CheckOutView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-class CheckOutDivider extends StatelessWidget {
-  const CheckOutDivider({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Divider(
-        color: Color.fromRGBO(175, 178, 185, 1),
-        height: 2,
-        endIndent: 12,
-      ),
-    );
-
   }
 }

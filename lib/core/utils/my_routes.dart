@@ -1,4 +1,5 @@
 import 'package:e_commerce/features/cart/presentation/views/checkOut/check_out_view.dart';
+import 'package:e_commerce/features/cart/presentation/views/checkOut/order_placed_view.dart';
 import 'package:e_commerce/features/home/presentation/views/home_view.dart';
 import 'package:e_commerce/features/items/presentation/views/items_view.dart';
 import 'package:e_commerce/features/items/presentation/views/widgets/itemDetails/item_details.dart';
@@ -23,6 +24,7 @@ class MyRoutes {
   static const itemsView = '/items';
   static const itemDetailsView = '/itemDetails';
   static const checkOutView = '/checkOut';
+  static const orderPlacedView = '/orderPlaced';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -87,6 +89,12 @@ class MyRoutes {
       case checkOutView:
         return CustomPageRoute(
           child: const CheckOutView(),
+          axisDirection: AxisDirection.left,
+        );
+
+      case orderPlacedView:
+        return CustomPageRoute(
+          child: const OrderPlacedView(),
           axisDirection: AxisDirection.left,
         );
     }
