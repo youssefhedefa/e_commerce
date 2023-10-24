@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/utils/const.dart';
 import 'package:e_commerce/core/utils/my_routes.dart';
+import 'package:e_commerce/core/utils/network/local/cache_helper.dart';
 import 'package:flutter/material.dart';
 class SkipButton extends StatelessWidget {
   const SkipButton({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class SkipButton extends StatelessWidget {
           child: TextButton(
             onPressed: () {
               Navigator.pushReplacementNamed(context, MyRoutes.logInView);
+              CacheHelper.setStartingScreen(value: true);
             },
             child: const Text(
               'Skip',

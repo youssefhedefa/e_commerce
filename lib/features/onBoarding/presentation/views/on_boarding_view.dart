@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/utils/const.dart';
 import 'package:e_commerce/core/utils/my_assets.dart';
 import 'package:e_commerce/core/utils/my_routes.dart';
+import 'package:e_commerce/core/utils/network/local/cache_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'widgets/custom_advance_button.dart';
@@ -76,6 +77,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   onPressed: () {
                     if (_currentPage == 2) {
                       Navigator.pushReplacementNamed(context, MyRoutes.logInView);
+                      CacheHelper.setStartingScreen(value: true);
                     } else {
                       setState(() {
                         _currentPage = pageController.page!.round();
